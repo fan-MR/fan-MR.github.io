@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第四章数据查询入门查询所有人的所有信息                         SELECT * FROM 表名；SELECT id,stuno,name,nation from stuinfo;SELECT * from stuinfo;查询年龄大于1000的同学姓名和年龄；SELECTSELECT name 姓名,age 年龄,nation 民族 from stuinfo where">
+  <meta name="description" content="第四章数据查询入门查询所有人的所有信息 SELECT * FROM 表名；SELECT id,stuno,name,nation from stuinfo;SELECT * from stuinfo; 查询年龄大于1000的同学姓名和年龄； SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]SELECT name 姓名,age 年龄,nation 民族 from stu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2019/10/16/第四章数据查询入门/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第四章数据查询入门查询所有人的所有信息                         SELECT * FROM 表名；SELECT id,stuno,name,nation from stuinfo;SELECT * from stuinfo;查询年龄大于1000的同学姓名和年龄；SELECTSELECT name 姓名,age 年龄,nation 民族 from stuinfo where">
+<meta property="og:description" content="第四章数据查询入门查询所有人的所有信息 SELECT * FROM 表名；SELECT id,stuno,name,nation from stuinfo;SELECT * from stuinfo; 查询年龄大于1000的同学姓名和年龄； SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]SELECT name 姓名,age 年龄,nation 民族 from stu">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-16T08:31:32.879Z">
+<meta property="og:updated_time" content="2019-10-16T08:45:50.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="第四章数据查询入门查询所有人的所有信息                         SELECT * FROM 表名；SELECT id,stuno,name,nation from stuinfo;SELECT * from stuinfo;查询年龄大于1000的同学姓名和年龄；SELECTSELECT name 姓名,age 年龄,nation 民族 from stuinfo where">
+<meta name="twitter:description" content="第四章数据查询入门查询所有人的所有信息 SELECT * FROM 表名；SELECT id,stuno,name,nation from stuinfo;SELECT * from stuinfo; 查询年龄大于1000的同学姓名和年龄； SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]SELECT name 姓名,age 年龄,nation 民族 from stu">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -159,7 +159,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第四章数据查询入门"><a href="#第四章数据查询入门" class="headerlink" title="第四章数据查询入门"></a>第四章数据查询入门</h1><p>查询所有人的所有信息                         SELECT * FROM 表名；<br>SELECT id,stuno,name,nation from stuinfo;<br>SELECT * from stuinfo;<br>查询年龄大于1000的同学姓名和年龄；SELECT<br>SELECT name 姓名,age 年龄,nation 民族 from stuinfo where age &gt; 1000;<br>查询年龄大于1000的同学姓名，并且把重复信息合并<br>SELECT DISTINCT name 姓名 from stuinfo where age &gt; 1000;<br>查询所有人的学号和姓名,只显示第50页的数据，每页5条<br>SELECT stuno,name from stuinfo LIMIT 0,5;<br>查询所有学员信息，按照年龄升序排序<br>SELECT * from stuinfo order by age asc;<br>查询名字是两个字，按照年龄降序排列<br>SELECT * from stuinfo WHERE name LIKE ‘__’ order by age DESC;<br>按照民族进行排序<br>SELECT * from stuinfo order by nation DESC;</p>
+        <h1 id="第四章数据查询入门"><a href="#第四章数据查询入门" class="headerlink" title="第四章数据查询入门"></a>第四章数据查询入门</h1><p>查询所有人的所有信息</p>
+<p>SELECT * FROM 表名；<br>SELECT id,stuno,name,nation from stuinfo;<br>SELECT * from stuinfo;</p>
+<p>查询年龄大于1000的同学姓名和年龄；</p>
+<p>SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]<br>SELECT name 姓名,age 年龄,nation 民族 from stuinfo where age &gt; 1000;</p>
+<p>查询年龄大于1000的同学姓名，并且把重复信息合并</p>
+<p>SELECT DISTINCT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]<br>SELECT DISTINCT name 姓名 from stuinfo where age &gt; 1000;</p>
+<p>查询所有人的学号和姓名,只显示第50页的数据，每页5条</p>
+<p> SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件] LIMIT 起始值，偏移值</p>
+<p>SELECT stuno,name from stuinfo LIMIT 0,5;</p>
+<p>查询所有学员信息，按照年龄升序排序     </p>
+<p>SELECT * FROM 表名 BY 排列条件 ASC<br>SELECT * from stuinfo order by age asc;</p>
+<p>查询名字是两个字，按照年龄降序排列  </p>
+<p>SELECT * FROM 表名 WHERE 条件 ORDER BY 排列条件 DESC<br>SELECT * from stuinfo WHERE name LIKE ‘__’ order by age DESC;<br>按照民族进行排序<br>SELECT * from stuinfo order by nation DESC;</p>
 
       
 
