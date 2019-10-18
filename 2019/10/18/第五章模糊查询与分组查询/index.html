@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | Hexo</title>
+  <title>第五章模糊查询与分组查询 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
+  <meta name="description" content="聚合函数 sum()求和 所有同学的年龄总和 SELECT SUM(age) from s_stu; max/min()最大/小值 所有女生中年龄最小的多大 SELECT MIN(age) from s_stu where sex = ‘女’; avg()平均值 所有男生的平均年龄 SELECT AVG(age) from s_stu where sex = ‘男’; count()计算数据表或查">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第五章模糊查询与分组查询">
+<meta property="og:url" content="http://yoursite.com/2019/10/18/第五章模糊查询与分组查询/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="聚合函数 sum()求和 所有同学的年龄总和 SELECT SUM(age) from s_stu; max/min()最大/小值 所有女生中年龄最小的多大 SELECT MIN(age) from s_stu where sex = ‘女’; avg()平均值 所有男生的平均年龄 SELECT AVG(age) from s_stu where sex = ‘男’; count()计算数据表或查">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-18T01:07:57.285Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="第五章模糊查询与分组查询">
+<meta name="twitter:description" content="聚合函数 sum()求和 所有同学的年龄总和 SELECT SUM(age) from s_stu; max/min()最大/小值 所有女生中年龄最小的多大 SELECT MIN(age) from s_stu where sex = ‘女’; avg()平均值 所有男生的平均年龄 SELECT AVG(age) from s_stu where sex = ‘男’; count()计算数据表或查">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,91 +154,174 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-第五章模糊查询与分组查询" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/18/第五章模糊查询与分组查询/" class="archive-article-date">
-  	<time datetime="2019-10-18T00:41:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/18/第五章模糊查询与分组查询/">第五章模糊查询与分组查询</a>
+    <h1 class="article-title" itemprop="name">
+      第五章模糊查询与分组查询
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/16/第四章数据查询入门/" class="archive-article-date">
-  	<time datetime="2019-10-16T08:27:40.599Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-16</time>
+        
+        <a href="/2019/10/18/第五章模糊查询与分组查询/" class="archive-article-date">
+  	<time datetime="2019-10-18T00:41:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
 </a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>聚合函数</p>
+<p>sum()求和</p>
+<p>所有同学的年龄总和</p>
+<p>SELECT SUM(age) from s_stu;</p>
+<p>max/min()最大/小值</p>
+<p>所有女生中年龄最小的多大</p>
+<p>SELECT MIN(age) from s_stu where sex = ‘女’;</p>
+<p>avg()平均值</p>
+<p>所有男生的平均年龄</p>
+<p>SELECT AVG(age) from s_stu where sex = ‘男’;</p>
+<p>count()计算数据表或查询结果集的总行数</p>
+<p>男生的数量         括号内可以是1或者*，1的运行速度快</p>
+<p>SELECT count(1) from s_stu WHERE sex = ‘男’;</p>
+<p>分组查询  group by只能查询函数</p>
+<p>查询男生和女生的总数</p>
+<p>SELECT count(*),sex FROM s_stu group by sex;</p>
+<p>having子句-分组查询的条件筛选</p>
+<p>查询男生和女生的年龄大于15的人数，只保留人数大于3的；</p>
+<p>SELECT count(1),sex FROM s_stu WHERE age &gt; 15 GROUP BY sex HAVING count(1) &gt;= 3;</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/18/第五章模糊查询与分组查询/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/15/第三章操作表中的数据（增，删，改）/" class="archive-article-date">
-  	<time datetime="2019-10-15T03:20:47.195Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/16/第四章数据查询入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -257,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

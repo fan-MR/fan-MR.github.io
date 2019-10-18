@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-第五章模糊查询与分组查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/18/第五章模糊查询与分组查询/">第五章模糊查询与分组查询</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/18/第五章模糊查询与分组查询/" class="archive-article-date">
+  	<time datetime="2019-10-18T00:41:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>聚合函数</p>
+<p>sum()求和</p>
+<p>所有同学的年龄总和</p>
+<p>SELECT SUM(age) from s_stu;</p>
+<p>max/min()最大/小值</p>
+<p>所有女生中年龄最小的多大</p>
+<p>SELECT MIN(age) from s_stu where sex = ‘女’;</p>
+<p>avg()平均值</p>
+<p>所有男生的平均年龄</p>
+<p>SELECT AVG(age) from s_stu where sex = ‘男’;</p>
+<p>count()计算数据表或查询结果集的总行数</p>
+<p>男生的数量         括号内可以是1或者*，1的运行速度快</p>
+<p>SELECT count(1) from s_stu WHERE sex = ‘男’;</p>
+<p>分组查询  group by只能查询函数</p>
+<p>查询男生和女生的总数</p>
+<p>SELECT count(*),sex FROM s_stu group by sex;</p>
+<p>having子句-分组查询的条件筛选</p>
+<p>查询男生和女生的年龄大于15的人数，只保留人数大于3的；</p>
+<p>SELECT count(1),sex FROM s_stu WHERE age &gt; 15 GROUP BY sex HAVING count(1) &gt;= 3;</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/18/第五章模糊查询与分组查询/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-第四章数据查询入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
