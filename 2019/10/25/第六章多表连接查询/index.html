@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>第六章多表连接查询 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="SELECT    t1.id, t1. NAME, t2. NAME  FROM    stu t1,    tea t2 WHERE    t1.teaid = t2.id  AND t1.id = 13; 内连接 SELECT    t1.id, t1. NAME, t2. NAME FROM stu t1 INNER JOIN tea t2  ON   t1.teaid = t2.id">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第六章多表连接查询">
+<meta property="og:url" content="http://yoursite.com/2019/10/25/第六章多表连接查询/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="SELECT    t1.id, t1. NAME, t2. NAME  FROM    stu t1,    tea t2 WHERE    t1.teaid = t2.id  AND t1.id = 13; 内连接 SELECT    t1.id, t1. NAME, t2. NAME FROM stu t1 INNER JOIN tea t2  ON   t1.teaid = t2.id">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-25T01:18:46.067Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="第六章多表连接查询">
+<meta name="twitter:description" content="SELECT    t1.id, t1. NAME, t2. NAME  FROM    stu t1,    tea t2 WHERE    t1.teaid = t2.id  AND t1.id = 13; 内连接 SELECT    t1.id, t1. NAME, t2. NAME FROM stu t1 INNER JOIN tea t2  ON   t1.teaid = t2.id">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,200 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-第八章索引和事务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-第六章多表连接查询" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/25/第八章索引和事务/">第八章索引和事务</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/25/第八章索引和事务/" class="archive-article-date">
-  	<time datetime="2019-10-25T01:25:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>索引是对表中一列或多列的值进行排序的一种结构，使用索引提高数据库中特定数据的查询速度</p>
-<table>
-<thead>
-<tr>
-<th align="center">优点</th>
-<th>缺点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1.通过创建唯一索引，可以保证数据库表中每一行数据的唯一性。<br>2.可以大大加快数据的查询速度。<br>3.在实现数据的引用完整性方面，可以加速表和表之间的连接。<br>4.在使用分组和排序进行查询数据时，也可以显著减少查询中分组和排序的时间。</td>
-<td>1.创建索引和维护索引要耗费时间，并且随着数据量的增加所耗费的时间也会增加。<br>2.索引需要占用磁盘空间，如果有大量的索引，索引文件也可能比数据文件更快达到最大文件尺寸。<br>3.当对表中的数据进行增加、删除、修改等操作时，索引也会动态的维护，这样就降低了数据的维护速度</td>
-</tr>
-</tbody></table>
-<p>分类</p>
-<table>
-<thead>
-<tr>
-<th align="center">索引</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">普通索引</td>
-<td align="center">是MySQL中的基本索引类型，允许在定义索引的列中插入重复值和空值</td>
-</tr>
-<tr>
-<td align="center">唯一索引</td>
-<td align="center">值必须唯一，但允许有空值（但只能有一个）</td>
-</tr>
-<tr>
-<td align="center">主键索引</td>
-<td align="center">是一种特殊的唯一索引，不允许有空值</td>
-</tr>
-<tr>
-<td align="center">组合索引</td>
-<td align="center">在表的多个字段组合上创建的索引，只有在查询条件中使用了这些字段的左边字段，才会被使用</td>
-</tr>
-<tr>
-<td align="center">全文索引</td>
-<td align="center">类型为fulltext</td>
-</tr>
-<tr>
-<td align="center">空间索引</td>
-<td align="center">是对空间数据类型的字段建立的索引</td>
-</tr>
-</tbody></table>
-<h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><p>特性：原子性、一致性、隔离性、持久性，简称ACID</p>
-<p>1.开始事务：BEGIN或START  TRANSACTION</p>
-<p>2.提交事务：COMMIT</p>
-<p>3.回滚（撤销）事务：ROLLBACK</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/25/第八章索引和事务/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第七章SQL高级子查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/25/第七章SQL高级子查询/">第七章SQL高级子查询</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/25/第七章SQL高级子查询/" class="archive-article-date">
-  	<time datetime="2019-10-25T01:18:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>exists写在where后面返回true（有返回行）或者false（无返回行）not exists 与它返回相反</p>
-<p>用一条 SQL 语句查询出每门课都大于 80 分的学生姓名</p>
-<p>– not in 字段<br>SELECT * FROM score  WHERE NAME NOT IN </p>
-<p>(SELECT  NAME FROM score WHERE score&lt;=80)</p>
-<p>– not exists 字段<br>SELECT * FROM score a WHERE NOT EXISTS </p>
-<p>(SELECT * FROM score b WHERE a.name = b.name AND b.score &lt; 80) ;</p>
-<p>– all()方法<br>SELECT * FROM score a WHERE </p>
-<p>80 &lt; ALL(SELECT score FROM score WHERE a.name = NAME );</p>
-<p>– any()方法<br>SELECT *FROM score a WHERE </p>
-<p>80 &lt; any(SELECT score FROM score WHERE a.name = NAME );</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/25/第七章SQL高级子查询/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第六章多表连接查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/25/第六章多表连接查询/">第六章多表连接查询</a>
+    <h1 class="article-title" itemprop="name">
+      第六章多表连接查询
     </h1>
   
 
@@ -371,6 +189,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -378,16 +217,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/25/第六章多表连接查询/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/25/第六章多表连接查询/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/10/25/第七章SQL高级子查询/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          第七章SQL高级子查询
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/18/第五章模糊查询与分组查询/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第五章模糊查询与分组查询</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -407,257 +314,14 @@
 
 
 
-
   
-    <article id="post-第五章模糊查询与分组查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/18/第五章模糊查询与分组查询/">第五章模糊查询与分组查询</a>
-    </h1>
   
 
-        
-        <a href="/2019/10/18/第五章模糊查询与分组查询/" class="archive-article-date">
-  	<time datetime="2019-10-18T00:41:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>聚合函数</p>
-<p>sum()求和</p>
-<p>所有同学的年龄总和</p>
-<p>SELECT SUM(age) from s_stu;</p>
-<p>max/min()最大/小值</p>
-<p>所有女生中年龄最小的多大</p>
-<p>SELECT MIN(age) from s_stu where sex = ‘女’;</p>
-<p>avg()平均值</p>
-<p>所有男生的平均年龄</p>
-<p>SELECT AVG(age) from s_stu where sex = ‘男’;</p>
-<p>count()计算数据表或查询结果集的总行数</p>
-<p>男生的数量         括号内可以是1或者*，1的运行速度快</p>
-<p>SELECT count(1) from s_stu WHERE sex = ‘男’;</p>
-<p>分组查询  group by只能查询函数</p>
-<p>查询男生和女生的总数</p>
-<p>SELECT count(*),sex FROM s_stu group by sex;</p>
-<p>having子句-分组查询的条件筛选</p>
-<p>查询男生和女生的年龄大于15的人数，只保留人数大于3的；</p>
-<p>SELECT count(1),sex FROM s_stu WHERE age &gt; 15 GROUP BY sex HAVING count(1) &gt;= 3;</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/18/第五章模糊查询与分组查询/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
-    <article id="post-第四章数据查询入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第四章数据查询入门"><a href="#第四章数据查询入门" class="headerlink" title="第四章数据查询入门"></a>第四章数据查询入门</h1><p>查询所有人的所有信息</p>
-<p>SELECT * FROM 表名；<br>SELECT id,stuno,name,nation from stuinfo;<br>SELECT * from stuinfo;</p>
-<p>查询年龄大于1000的同学姓名和年龄；</p>
-<p>SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]<br>SELECT name 姓名,age 年龄,nation 民族 from stuinfo where age &gt; 1000;</p>
-<p>查询年龄大于1000的同学姓名，并且把重复信息合并</p>
-<p>SELECT DISTINCT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]<br>SELECT DISTINCT name 姓名 from stuinfo where age &gt; 1000;</p>
-<p>查询所有人的学号和姓名,只显示第50页的数据，每页5条</p>
-<p> SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件] LIMIT 起始值，偏移值</p>
-<p>SELECT stuno,name from stuinfo LIMIT 0,5;</p>
-<p>查询所有学员信息，按照年龄升序排序     </p>
-<p>SELECT * FROM 表名 BY 排列条件 ASC<br>SELECT * from stuinfo order by age asc;</p>
-<p>查询名字是两个字，按照年龄降序排列  </p>
-<p>SELECT * FROM 表名 WHERE 条件 ORDER BY 排列条件 DESC<br>SELECT * from stuinfo WHERE name LIKE ‘__’ order by age DESC;<br>按照民族进行排序<br>SELECT * from stuinfo order by nation DESC;</p>
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/16/第四章数据查询入门/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第三章操作表中的数据（增，删，改）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第三章操作表中的数据（增，删，改）"><a href="#第三章操作表中的数据（增，删，改）" class="headerlink" title="第三章操作表中的数据（增，删，改）"></a>第三章操作表中的数据（增，删，改）</h1><p>1.添加数据<br>INSERT [INTO]  表名 [(字段1,字段2,字段3…)] VALUES(值1,值2,值3…);<br>2.删除数据<br>DELETE FROM 表名 [WHERE 条件字段 = 值];<br>3.修改数据<br>UPDATA 表名 SET 要更新的字段 = 值 WHERE [条件字段 = 值]；</p>
-<p>WHERE 若不写则是对全部数据进行修改</p>
-<p>比较运算符</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&gt;</td>
-<td>大于</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>大于等于</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小于</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>小于等于</td>
-</tr>
-<tr>
-<td>=</td>
-<td>等于</td>
-</tr>
-<tr>
-<td>!=或&lt;&gt;</td>
-<td>不等于</td>
-</tr>
-<tr>
-<td>IS NULL</td>
-<td>是否为空</td>
-</tr>
-<tr>
-<td>IS NOT NULL</td>
-<td>是否不为空</td>
-</tr>
-<tr>
-<td>IN</td>
-<td>判断一个值是IN列表中的任意一个值</td>
-</tr>
-<tr>
-<td>NOT IN</td>
-<td>判断一个值不是IN列表中的任意一个值</td>
-</tr>
-<tr>
-<td>LIKE</td>
-<td>通配符（%通配全部字符，_通配一个字符）</td>
-</tr>
-<tr>
-<td>BETWEEN AND</td>
-<td>判断一个值是否是在两个值之间</td>
-</tr>
-</tbody></table>
-<p>逻辑运算符</p>
-<p>And（或者&amp;&amp;）、Or(或者||)、Not(或者!)</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/15/第三章操作表中的数据（增，删，改）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -680,8 +344,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
