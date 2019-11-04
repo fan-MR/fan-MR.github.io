@@ -173,7 +173,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>创建servlet步骤<br>1.创建一个类<br>2.继承HttpServlet<br>3.重写doGet,doPost<br>4.编写web,xml</p>
-<p>使java代码能够在HTML页面中显示：<br>在.xml中输入<br><servlet>（找到servlet）<br><servlet-name>S（名字随意）</servlet-name><br><servlet-class>com.dzqc.jjj.Text1（包名加Java文件名）</servlet-class><br></servlet>（找到servlet的url映射）<br><servlet-mapping><br><servlet-name>S（和上面name一致）</servlet-name><br><url-pattern>/abc（用“/”开头，后面随意）</url-pattern><br></servlet-mapping></p>
+<p>使java代码能够在HTML页面中显示：<br>在.xml中输入  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;（找到servlet）</span><br><span class="line">&lt;servlet-name&gt;S（名字随意）&lt;/servlet-name&gt;</span><br><span class="line">&lt;servlet-class&gt;com.dzqc.jjj.Text1（包名加Java文件名）&lt;/servlet-class&gt;</span><br><span class="line">&lt;/servlet&gt;（找到servlet的url映射）</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">&lt;servlet-name&gt;S（和上面name一致）&lt;/servlet-name&gt;</span><br><span class="line">&lt;url-pattern&gt;/abc（用“/”开头，后面随意）&lt;/url-pattern&gt;</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+
 <p>.jsp文件和.xml相连使用form中的action属性值为.xml的url映射的相对路径，method为提交方式get（不加密）post（加密）</p>
 <p>处理乱码的方法<br>1.设置工作空间编码格式<br>window-&gt;preferences-&gt;works pace-&gt;utf-8<br>2.设置jsp文件编码格式<br>window-&gt;preferences-&gt;jsp file-&gt;utf-8<br>3.修改请求编码格式<br>get:    tomacat8.5默认就是utf-8<br>post:    request.setCharacterEncoding(“utf-8”);<br>4.修改相应响应编码格式<br>get:    response.setContentType(“text/html;charset=utf-8”);<br>post:   response.setContentType(“text/html;charset=utf-8”);</p>
 
