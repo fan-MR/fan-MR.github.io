@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -33,7 +32,7 @@
   
 
 </head>
-</html>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -55,22 +54,22 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)" target="_blank" rel="noopener">所有文章</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)" target="_blank" rel="noopener">友链</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)" target="_blank" rel="noopener">关于我</a>
     			
             
 		</nav>
@@ -135,7 +134,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -152,486 +151,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-简单jsp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/02/简单jsp/">简单jsp</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/02/简单jsp/" class="archive-article-date">
-  	<time datetime="2019-11-02T06:46:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>创建servlet步骤<br>1.创建一个类<br>2.继承HttpServlet<br>3.重写doGet,doPost<br>4.编写web,xml</p>
-<p>使java代码能够在HTML页面中显示：<br>在.xml中输入  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;（找到servlet）</span><br><span class="line">&lt;servlet-name&gt;S（名字随意）&lt;/servlet-name&gt;</span><br><span class="line">&lt;servlet-class&gt;com.dzqc.jjj.Text1（包名加Java文件名）&lt;/servlet-class&gt;</span><br><span class="line">&lt;/servlet&gt;（找到servlet的url映射）</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">&lt;servlet-name&gt;S（和上面name一致）&lt;/servlet-name&gt;</span><br><span class="line">&lt;url-pattern&gt;/abc（用“/”开头，后面随意）&lt;/url-pattern&gt;</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
-
-<p>.jsp文件和.xml相连使用form中的action属性值为.xml的url映射的相对路径，method为提交方式get（不加密）post（加密）</p>
-<p>处理乱码的方法<br>1.设置工作空间编码格式<br>window-&gt;preferences-&gt;works pace-&gt;utf-8<br>2.设置jsp文件编码格式<br>window-&gt;preferences-&gt;jsp file-&gt;utf-8<br>3.修改请求编码格式<br>get:    tomacat8.5默认就是utf-8<br>post:    request.setCharacterEncoding(“utf-8”);<br>4.修改相应响应编码格式<br>get:    response.setContentType(“text/html;charset=utf-8”);<br>post:   response.setContentType(“text/html;charset=utf-8”);</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/02/简单jsp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第八章索引和事务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/25/第八章索引和事务/">第八章索引和事务</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/25/第八章索引和事务/" class="archive-article-date">
-  	<time datetime="2019-10-25T01:25:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>索引是对表中一列或多列的值进行排序的一种结构，使用索引提高数据库中特定数据的查询速度</p>
-<table>
-<thead>
-<tr>
-<th align="center">优点</th>
-<th>缺点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1.通过创建唯一索引，可以保证数据库表中每一行数据的唯一性。<br>2.可以大大加快数据的查询速度。<br>3.在实现数据的引用完整性方面，可以加速表和表之间的连接。<br>4.在使用分组和排序进行查询数据时，也可以显著减少查询中分组和排序的时间。</td>
-<td>1.创建索引和维护索引要耗费时间，并且随着数据量的增加所耗费的时间也会增加。<br>2.索引需要占用磁盘空间，如果有大量的索引，索引文件也可能比数据文件更快达到最大文件尺寸。<br>3.当对表中的数据进行增加、删除、修改等操作时，索引也会动态的维护，这样就降低了数据的维护速度</td>
-</tr>
-</tbody></table>
-<p>分类</p>
-<table>
-<thead>
-<tr>
-<th align="center">索引</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">普通索引</td>
-<td align="center">是MySQL中的基本索引类型，允许在定义索引的列中插入重复值和空值</td>
-</tr>
-<tr>
-<td align="center">唯一索引</td>
-<td align="center">值必须唯一，但允许有空值（但只能有一个）</td>
-</tr>
-<tr>
-<td align="center">主键索引</td>
-<td align="center">是一种特殊的唯一索引，不允许有空值</td>
-</tr>
-<tr>
-<td align="center">组合索引</td>
-<td align="center">在表的多个字段组合上创建的索引，只有在查询条件中使用了这些字段的左边字段，才会被使用</td>
-</tr>
-<tr>
-<td align="center">全文索引</td>
-<td align="center">类型为fulltext</td>
-</tr>
-<tr>
-<td align="center">空间索引</td>
-<td align="center">是对空间数据类型的字段建立的索引</td>
-</tr>
-</tbody></table>
-<h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><p>特性：原子性、一致性、隔离性、持久性，简称ACID</p>
-<p>1.开始事务：BEGIN或START  TRANSACTION</p>
-<p>2.提交事务：COMMIT</p>
-<p>3.回滚（撤销）事务：ROLLBACK</p>
-<p>查询公式</p>
-<p>字段：</p>
-<p>表：</p>
-<p>条件：</p>
-<p>分组：</p>
-<p>聚合函数：</p>
-<p>排序：</p>
-<p>分页：</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/25/第八章索引和事务/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第七章SQL高级子查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/25/第七章SQL高级子查询/">第七章SQL高级子查询</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/25/第七章SQL高级子查询/" class="archive-article-date">
-  	<time datetime="2019-10-25T01:18:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>exists写在where后面返回true（有返回行）或者false（无返回行）not exists 与它返回相反</p>
-<p>用一条 SQL 语句查询出每门课都大于 80 分的学生姓名</p>
-<p>– not in 字段<br>SELECT * FROM score  WHERE NAME NOT IN </p>
-<p>(SELECT  NAME FROM score WHERE score&lt;=80)</p>
-<p>– not exists 字段<br>SELECT * FROM score a WHERE NOT EXISTS </p>
-<p>(SELECT * FROM score b WHERE a.name = b.name AND b.score &lt; 80) ;</p>
-<p>– all()方法<br>SELECT * FROM score a WHERE </p>
-<p>80 &lt; ALL(SELECT score FROM score WHERE a.name = NAME );</p>
-<p>– any()方法<br>SELECT *FROM score a WHERE </p>
-<p>80 &lt; any(SELECT score FROM score WHERE a.name = NAME );</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/25/第七章SQL高级子查询/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第六章多表连接查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/25/第六章多表连接查询/">第六章多表连接查询</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/25/第六章多表连接查询/" class="archive-article-date">
-  	<time datetime="2019-10-25T01:07:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>SELECT    t1.id, t1. NAME, t2. NAME  FROM    stu t1,    tea t2 WHERE    t1.teaid = t2.id  AND t1.id = 13;</p>
-<p>内连接</p>
-<p>SELECT    t1.id, t1. NAME, t2. NAME FROM stu t1 <strong>INNER JOIN</strong> tea t2  <strong>ON</strong>   t1.teaid = t2.id  AND t1.id = 13;</p>
-<p>左外链接</p>
-<p>SELECT    t1.id,t1. NAME,t2. NAME FROM stu t1 <strong>LEFT JOIN</strong> tea t2 <strong>ON</strong>  t1.teaid = t2.id AND t1.id = 13;</p>
-<p>右外链接</p>
-<p>SELECT    t1.id,t1. NAME,t2. NAME FROM stu t1 <strong>right JOIN</strong> tea t2 <strong>ON</strong>  t1.teaid = t2.id;</p>
-<p>全连接</p>
-<p>SELECT    t1.id,t1. NAME,t2. NAME FROM stu t1 <strong>FULL JOIN</strong> tea t2 <strong>ON</strong>  t1.teaid = t2.id;</p>
-<p>交叉连接</p>
-<p>SELECT    t1.id,t1.NAME,t2.NAME FROM    stu t1 <strong>cross JOIN</strong>    tea t2 <strong>ON</strong>    t1.teaid = t2.id;</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/25/第六章多表连接查询/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第五章模糊查询与分组查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/18/第五章模糊查询与分组查询/">第五章模糊查询与分组查询</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/18/第五章模糊查询与分组查询/" class="archive-article-date">
-  	<time datetime="2019-10-18T00:41:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>聚合函数</p>
-<p>sum()求和</p>
-<p>所有同学的年龄总和</p>
-<p>SELECT SUM(age) from s_stu;</p>
-<p>max/min()最大/小值</p>
-<p>所有女生中年龄最小的多大</p>
-<p>SELECT MIN(age) from s_stu where sex = ‘女’;</p>
-<p>avg()平均值</p>
-<p>所有男生的平均年龄</p>
-<p>SELECT AVG(age) from s_stu where sex = ‘男’;</p>
-<p>count()计算数据表或查询结果集的总行数</p>
-<p>男生的数量         括号内可以是1或者*，1的运行速度快</p>
-<p>SELECT count(1) from s_stu WHERE sex = ‘男’;</p>
-<p>分组查询  group by只能查询函数</p>
-<p>查询男生和女生的总数</p>
-<p>SELECT count(*),sex FROM s_stu group by sex;</p>
-<p>having子句-分组查询的条件筛选</p>
-<p>查询男生和女生的年龄大于15的人数，只保留人数大于3的；</p>
-<p>SELECT count(1),sex FROM s_stu WHERE age &gt; 15 GROUP BY sex HAVING count(1) &gt;= 3;</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/18/第五章模糊查询与分组查询/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第四章数据查询入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第四章数据查询入门"><a href="#第四章数据查询入门" class="headerlink" title="第四章数据查询入门"></a>第四章数据查询入门</h1><p>查询所有人的所有信息</p>
-<p>SELECT * FROM 表名；<br>SELECT id,stuno,name,nation from stuinfo;<br>SELECT * from stuinfo;</p>
-<p>查询年龄大于1000的同学姓名和年龄；</p>
-<p>SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]<br>SELECT name 姓名,age 年龄,nation 民族 from stuinfo where age &gt; 1000;</p>
-<p>查询年龄大于1000的同学姓名，并且把重复信息合并</p>
-<p>SELECT DISTINCT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]<br>SELECT DISTINCT name 姓名 from stuinfo where age &gt; 1000;</p>
-<p>查询所有人的学号和姓名,只显示第50页的数据，每页5条</p>
-<p> SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件] LIMIT 起始值，偏移值</p>
-<p>SELECT stuno,name from stuinfo LIMIT 0,5;</p>
-<p>查询所有学员信息，按照年龄升序排序     </p>
-<p>SELECT * FROM 表名 BY 排列条件 ASC<br>SELECT * from stuinfo order by age asc;</p>
-<p>查询名字是两个字，按照年龄降序排列  </p>
-<p>SELECT * FROM 表名 WHERE 条件 ORDER BY 排列条件 DESC<br>SELECT * from stuinfo WHERE name LIKE ‘__’ order by age DESC;<br>按照民族进行排序<br>SELECT * from stuinfo order by nation DESC;</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/16/第四章数据查询入门/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-第三章操作表中的数据（增，删，改）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%93%8D%E4%BD%9C%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%88%E5%A2%9E%EF%BC%8C%E5%88%A0%EF%BC%8C%E6%94%B9%EF%BC%89/">第三章操作表中的数据（增，删，改）</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%93%8D%E4%BD%9C%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%88%E5%A2%9E%EF%BC%8C%E5%88%A0%EF%BC%8C%E6%94%B9%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2019-11-12T08:42:23.596Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第三章操作表中的数据（增，删，改）"><a href="#第三章操作表中的数据（增，删，改）" class="headerlink" title="第三章操作表中的数据（增，删，改）"></a>第三章操作表中的数据（增，删，改）</h1><p>1.添加数据<br>INSERT [INTO]  表名 [(字段1,字段2,字段3…)] VALUES(值1,值2,值3…);<br>2.删除数据<br>DELETE FROM 表名 [WHERE 条件字段 = 值];<br>3.修改数据<br>UPDATA 表名 SET 要更新的字段 = 值 WHERE [条件字段 = 值]；</p>
+        <h1 id="第三章操作表中的数据（增，删，改）"><a href="#第三章操作表中的数据（增，删，改）" class="headerlink" title="第三章操作表中的数据（增，删，改）"></a>第三章操作表中的数据（增，删，改）</h1><p>1.添加数据<br>INSERT [INTO] 表名 [(字段1,字段2,字段3…)] VALUES(值1,值2,值3…);<br>2.删除数据<br>DELETE FROM 表名 [WHERE 条件字段 = 值];<br>3.修改数据<br>UPDATA 表名 SET 要更新的字段 = 值 WHERE [条件字段 = 值]；</p>
 <p>WHERE 若不写则是对全部数据进行修改</p>
 <p>比较运算符</p>
 <table>
@@ -704,7 +244,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/15/第三章操作表中的数据（增，删，改）/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/12/%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%93%8D%E4%BD%9C%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%88%E5%A2%9E%EF%BC%8C%E5%88%A0%EF%BC%8C%E6%94%B9%EF%BC%89/">展开全文 >></a>
         </p>
       
 
@@ -718,7 +258,559 @@
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-第四章数据查询入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E5%85%A5%E9%97%A8/">第四章数据查询入门</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E5%85%A5%E9%97%A8/" class="archive-article-date">
+  	<time datetime="2019-11-12T08:41:59.049Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第四章数据查询入门"><a href="#第四章数据查询入门" class="headerlink" title="第四章数据查询入门"></a>第四章数据查询入门</h1><p>查询所有人的所有信息</p>
+<p>SELECT * FROM 表名；<br>SELECT id,stuno,name,nation from stuinfo;<br>SELECT * from stuinfo;</p>
+<p>查询年龄大于1000的同学姓名和年龄；</p>
+<p>SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]<br>SELECT name 姓名,age 年龄,nation 民族 from stuinfo where age &gt; 1000;</p>
+<p>查询年龄大于1000的同学姓名，并且把重复信息合并</p>
+<p>SELECT DISTINCT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件]<br>SELECT DISTINCT name 姓名 from stuinfo where age &gt; 1000;</p>
+<p>查询所有人的学号和姓名,只显示第50页的数据，每页5条</p>
+<p>SELECT 查询字段 [重新命名] FROM 表名 [WHERE 查询条件] LIMIT 起始值，偏移值</p>
+<p>SELECT stuno,name from stuinfo LIMIT 0,5;</p>
+<p>查询所有学员信息，按照年龄升序排序</p>
+<p>SELECT * FROM 表名 BY 排列条件 ASC<br>SELECT * from stuinfo order by age asc;</p>
+<p>查询名字是两个字，按照年龄降序排列</p>
+<p>SELECT * FROM 表名 WHERE 条件 ORDER BY 排列条件 DESC<br>SELECT * from stuinfo WHERE name LIKE ‘__’ order by age DESC;<br>按照民族进行排序<br>SELECT * from stuinfo order by nation DESC;</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E5%85%A5%E9%97%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-第五章模糊查询与分组查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/%E7%AC%AC%E4%BA%94%E7%AB%A0%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2/">第五章模糊查询与分组查询</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/%E7%AC%AC%E4%BA%94%E7%AB%A0%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2/" class="archive-article-date">
+  	<time datetime="2019-11-12T08:41:17.624Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第五章模糊查询与分组查询"><a href="#第五章模糊查询与分组查询" class="headerlink" title="第五章模糊查询与分组查询"></a>第五章模糊查询与分组查询</h1><p>聚合函数</p>
+<p>sum()求和</p>
+<p>所有同学的年龄总和</p>
+<p>SELECT SUM(age) from s_stu;</p>
+<p>max/min()最大/小值</p>
+<p>所有女生中年龄最小的多大</p>
+<p>SELECT MIN(age) from s_stu where sex = ‘女’;</p>
+<p>avg()平均值</p>
+<p>所有男生的平均年龄</p>
+<p>SELECT AVG(age) from s_stu where sex = ‘男’;</p>
+<p>count()计算数据表或查询结果集的总行数</p>
+<p>男生的数量 括号内可以是1或者*，1的运行速度快</p>
+<p>SELECT count(1) from s_stu WHERE sex = ‘男’;</p>
+<p>分组查询 group by只能查询函数</p>
+<p>查询男生和女生的总数</p>
+<p>SELECT count(*),sex FROM s_stu group by sex;</p>
+<p>having子句-分组查询的条件筛选</p>
+<p>查询男生和女生的年龄大于15的人数，只保留人数大于3的；</p>
+<p>SELECT count(1),sex FROM s_stu WHERE age &gt; 15 GROUP BY sex HAVING count(1) &gt;= 3;</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/%E7%AC%AC%E4%BA%94%E7%AB%A0%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-第六章多表连接查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/%E7%AC%AC%E5%85%AD%E7%AB%A0%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">第六章多表连接查询</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/%E7%AC%AC%E5%85%AD%E7%AB%A0%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/" class="archive-article-date">
+  	<time datetime="2019-11-12T08:40:28.975Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第六章多表连接查询"><a href="#第六章多表连接查询" class="headerlink" title="第六章多表连接查询"></a>第六章多表连接查询</h1><p>SELECT t1.id, t1. NAME, t2. NAME FROM stu t1, tea t2 WHERE t1.teaid = t2.id AND t1.id = 13;</p>
+<p>内连接</p>
+<p>SELECT t1.id, t1. NAME, t2. NAME FROM stu t1 <strong>INNER JOIN</strong> tea t2 <strong>ON</strong> t1.teaid = t2.id AND t1.id = 13;</p>
+<p>左外链接</p>
+<p>SELECT t1.id,t1. NAME,t2. NAME FROM stu t1 <strong>LEFT JOIN</strong> tea t2 <strong>ON</strong> t1.teaid = t2.id AND t1.id = 13;</p>
+<p>右外链接</p>
+<p>SELECT t1.id,t1. NAME,t2. NAME FROM stu t1 <strong>right JOIN</strong> tea t2 <strong>ON</strong> t1.teaid = t2.id;</p>
+<p>全连接</p>
+<p>SELECT t1.id,t1. NAME,t2. NAME FROM stu t1 <strong>FULL JOIN</strong> tea t2 <strong>ON</strong> t1.teaid = t2.id;</p>
+<p>交叉连接</p>
+<p>SELECT t1.id,t1.NAME,t2.NAME FROM stu t1 <strong>cross JOIN</strong> tea t2 <strong>ON</strong> t1.teaid = t2.id;</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/%E7%AC%AC%E5%85%AD%E7%AB%A0%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-第七章SQL高级子查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/%E7%AC%AC%E4%B8%83%E7%AB%A0SQL%E9%AB%98%E7%BA%A7%E5%AD%90%E6%9F%A5%E8%AF%A2/">第七章SQL高级子查询</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/%E7%AC%AC%E4%B8%83%E7%AB%A0SQL%E9%AB%98%E7%BA%A7%E5%AD%90%E6%9F%A5%E8%AF%A2/" class="archive-article-date">
+  	<time datetime="2019-11-12T08:38:15.073Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第七章SQL高级子查询"><a href="#第七章SQL高级子查询" class="headerlink" title="第七章SQL高级子查询"></a>第七章SQL高级子查询</h1><p>exists写在where后面返回true（有返回行）或者false（无返回行）not exists 与它返回相反</p>
+<p>用一条 SQL 语句查询出每门课都大于 80 分的学生姓名</p>
+<p>– not in 字段<br>SELECT * FROM score WHERE NAME NOT IN</p>
+<p>(SELECT NAME FROM score WHERE score&lt;=80)</p>
+<p>– not exists 字段<br>SELECT * FROM score a WHERE NOT EXISTS</p>
+<p>(SELECT * FROM score b WHERE a.name = b.name AND b.score &lt; 80) ;</p>
+<p>– all()方法<br>SELECT * FROM score a WHERE</p>
+<p>80 &lt; ALL(SELECT score FROM score WHERE a.name = NAME );</p>
+<p>– any()方法<br>SELECT *FROM score a WHERE</p>
+<p>80 &lt; any(SELECT score FROM score WHERE a.name = NAME );</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/%E7%AC%AC%E4%B8%83%E7%AB%A0SQL%E9%AB%98%E7%BA%A7%E5%AD%90%E6%9F%A5%E8%AF%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-第八章索引和事务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/%E7%AC%AC%E5%85%AB%E7%AB%A0%E7%B4%A2%E5%BC%95%E5%92%8C%E4%BA%8B%E5%8A%A1/">第八章索引和事务</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/%E7%AC%AC%E5%85%AB%E7%AB%A0%E7%B4%A2%E5%BC%95%E5%92%8C%E4%BA%8B%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2019-11-12T08:36:56.450Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第八章索引和事务"><a href="#第八章索引和事务" class="headerlink" title="第八章索引和事务"></a>第八章索引和事务</h1><h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>索引是对表中一列或多列的值进行排序的一种结构，使用索引提高数据库中特定数据的查询速度</p>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.通过创建唯一索引，可以保证数据库表中每一行数据的唯一性。 2.可以大大加快数据的查询速度。 3.在实现数据的引用完整性方面，可以加速表和表之间的连接。 4.在使用分组和排序进行查询数据时，也可以显著减少查询中分组和排序的时间。</td>
+<td>1.创建索引和维护索引要耗费时间，并且随着数据量的增加所耗费的时间也会增加。 2.索引需要占用磁盘空间，如果有大量的索引，索引文件也可能比数据文件更快达到最大文件尺寸。 3.当对表中的数据进行增加、删除、修改等操作时，索引也会动态的维护，这样就降低了数据的维护速度</td>
+</tr>
+</tbody></table>
+<p>分类</p>
+<table>
+<thead>
+<tr>
+<th>索引</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通索引</td>
+<td>是MySQL中的基本索引类型，允许在定义索引的列中插入重复值和空值</td>
+</tr>
+<tr>
+<td>唯一索引</td>
+<td>值必须唯一，但允许有空值（但只能有一个）</td>
+</tr>
+<tr>
+<td>主键索引</td>
+<td>是一种特殊的唯一索引，不允许有空值</td>
+</tr>
+<tr>
+<td>组合索引</td>
+<td>在表的多个字段组合上创建的索引，只有在查询条件中使用了这些字段的左边字段，才会被使用</td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td>类型为fulltext</td>
+</tr>
+<tr>
+<td>空间索引</td>
+<td>是对空间数据类型的字段建立的索引</td>
+</tr>
+</tbody></table>
+<h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><p>特性：原子性、一致性、隔离性、持久性，简称ACID</p>
+<p>1.开始事务：BEGIN或START TRANSACTION</p>
+<p>2.提交事务：COMMIT</p>
+<p>3.回滚（撤销）事务：ROLLBACK</p>
+<p>查询公式</p>
+<p>字段：</p>
+<p>表：</p>
+<p>条件：</p>
+<p>分组：</p>
+<p>聚合函数：</p>
+<p>排序：</p>
+<p>分页：</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/%E7%AC%AC%E5%85%AB%E7%AB%A0%E7%B4%A2%E5%BC%95%E5%92%8C%E4%BA%8B%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-简单jsp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/%E7%AE%80%E5%8D%95jsp/">简单jsp</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/%E7%AE%80%E5%8D%95jsp/" class="archive-article-date">
+  	<time datetime="2019-11-12T08:35:20.385Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 简单jsp </p>
+<p>创建servlet步骤<br>1.创建一个类<br>2.继承HttpServlet<br>3.重写doGet,doPost<br>4.编写web,xml</p>
+<p>使java代码能够在HTML页面中显示：<br>在.xml中输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;（找到servlet）&lt;servlet-name&gt;S（名字随意）&lt;/servlet-name&gt;&lt;servlet-class&gt;com.dzqc.jjj.Text1（包名加Java文件名）&lt;/servlet-class&gt;&lt;/servlet&gt;（找到servlet的url映射）&lt;servlet-mapping&gt;&lt;servlet-name&gt;S（和上面name一致）&lt;/servlet-name&gt;&lt;url-pattern&gt;/abc（用“/”开头，后面随意）&lt;/url-pattern&gt;&lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+<p>.jsp文件和.xml相连使用form中的action属性值为.xml的url映射的相对路径，method为提交方式get（不加密）post（加密）</p>
+<p>处理乱码的方法<br>1.设置工作空间编码格式<br>window-&gt;preferences-&gt;works pace-&gt;utf-8<br>2.设置jsp文件编码格式<br>window-&gt;preferences-&gt;jsp file-&gt;utf-8<br>3.修改请求编码格式<br>get: tomacat8.5默认就是utf-8<br>post: request.setCharacterEncoding(“utf-8”);<br>4.修改相应响应编码格式<br>get: response.setContentType(“text/html;charset=utf-8”);<br>post: response.setContentType(“text/html;charset=utf-8”);</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/%E7%AE%80%E5%8D%95jsp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-eclipse连接数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/eclipse%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/">eclipse连接数据库</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/eclipse%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2019-11-12T07:29:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/eclipse%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
                 <i class="icon-font icon-back"></i>
             </a>
             <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
@@ -798,15 +890,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:friends">友链</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
